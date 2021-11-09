@@ -1,0 +1,204 @@
+{
+  "actions": [
+    {
+      "name": "Пойти на работу (Можно только если алкоголь < 50 а усталость < 10)\n (Счастье -5, Опьянение -30, Усталость +70, Деньги +100$)",
+      "conditions": [
+        {
+          "name": "alcohol",
+          "min": 0,
+          "max": 70
+        },
+        {
+          "name": "tired",
+          "min": 0,
+          "max": 10
+        }
+      ],
+      "result": [
+        {
+          "name": "alcohol",
+          "value": -30
+        },
+        {
+          "name": "happy",
+          "value": -5
+        },
+        {
+          "name": "tired",
+          "value": 70
+        },
+        {
+          "name": "money",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "name": "Созерцать природу (Счастье +1, Опьянение -10, Усталость +10)",
+      "conditions": [
+      ],
+      "result": [
+        {
+          "name": "alcohol",
+          "value": -10
+        },
+        {
+          "name": "happy",
+          "value": 1
+        },
+        {
+          "name": "tired",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "Пить вино и смотреть сериал (Счастье -1, Опьянение +30, Усталость +10, Здоровье -5, Деньги -20$)",
+      "conditions": [
+      ],
+      "result": [
+        {
+          "name": "alcohol",
+          "value": 30
+        },
+        {
+          "name": "happy",
+          "value": -1
+        },
+        {
+          "name": "tired",
+          "value": 10
+        },
+        {
+          "name": "money",
+          "value": -20
+        },
+        {
+          "name": "health",
+          "value": -5
+        }
+      ]
+    },
+    {
+      "name": "Сходить в бар (Счастье +1, Опьянение +60, Усталость +40, Здоровье -10, Деньги -100$)",
+      "conditions": [
+      ],
+      "result": [
+        {
+          "name": "alcohol",
+          "value": 60
+        },
+        {
+          "name": "happy",
+          "value": 1
+        },
+        {
+          "name": "tired",
+          "value": 40
+        },
+        {
+          "name": "money",
+          "value": -100
+        },
+        {
+          "name": "health",
+          "value": -10
+        }
+      ]
+    },
+    {
+      "name": "Выпить с маргинальными личностями (Счастье +5, Опьянение +90, Усталость +80, Здоровье -80, Деньги -150$)",
+      "conditions": [
+      ],
+      "result": [
+        {
+          "name": "alcohol",
+          "value": 90
+        },
+        {
+          "name": "happy",
+          "value": 5
+        },
+        {
+          "name": "tired",
+          "value": 80
+        },
+        {
+          "name": "money",
+          "value": -150
+        },
+        {
+          "name": "health",
+          "value": -80
+        }
+      ]
+    },
+    {
+      "name": "Петь в метро (Счастье +1, Опьянение +10, Усталость +20, Деньги +10$ (еще + $50 если изначально Опьянение было >= 30 и <= 60))",
+      "conditions": [
+      ],
+      "result": [
+        {
+          "name": "alcohol",
+          "value": 10
+        },
+        {
+          "name": "happy",
+          "value": 1
+        },
+        {
+          "name": "tired",
+          "value": 20
+        },
+        {
+          "name": "money",
+          "value": 10,
+          "condition":
+          {
+            "name": "alcohol",
+            "value": 50,
+            "min": 40,
+            "max": 70
+          }
+        }
+      ]
+    },
+    {
+      "name": "Спать (Счастье -3 если алкоголь >= 70, Опьянение -50, Усталость -70, Здоровье +90 если алкоголь <= 30)",
+      "conditions": [
+      ],
+      "result": [
+        {
+          "name": "happy",
+          "value": 0,
+          "condition":
+          {
+            "name": "alcohol",
+            "value": -3,
+            "min": 70,
+            "max": 100
+          }
+        },
+        {
+          "name": "tired",
+          "value": -70
+        },
+        {
+          "name": "alcohol",
+          "value": -50
+        },
+        {
+          "name": "health",
+          "value": 0,
+          "condition":
+          {
+            "name": "alcohol",
+            "value": 90,
+            "min": 0,
+            "max": 30
+          }
+        }
+      ]
+    }
+  ]
+}
